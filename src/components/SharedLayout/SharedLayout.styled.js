@@ -56,7 +56,6 @@ export const Frame = styled.div`
   justify-content: center;
   width: 70px;
   height: 70px;
-  border: 1px solid rgb(114, 17, 17);
 `;
 
 export const Icon = styled.svg`
@@ -85,10 +84,9 @@ export const Header = styled.header`
   margin-top: 16px;
   border: 5px solid #f1dbba;
   background-color: rgb(216, 155, 75);
-  background-color: rgb(235, 144, 25);
+  background-color: #94c751;
   border-radius: 4px;
   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.3));
-  
 
   > nav {
     display: flex;
@@ -109,19 +107,19 @@ export const Link = styled(NavLink)`
   padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
-  color: rgb(114, 17, 17);
+  color: rgb(75, 177, 117);
   font-weight: 700;
-  background-color: rgb(240, 164, 65);
-  border: 1px solid rgb(114, 17, 17);
+  background-color: #c2e297;
+  border: 2px solid #f1dbba;
 
   &.active {
     color: white;
-    background-color: rgb(114, 17, 17);
+    background-color: green;
   }
 
   &:hover {
     color: white;
-    background-color: rgb(114, 17, 17);
+    background-color: green;
   }
 `;
 

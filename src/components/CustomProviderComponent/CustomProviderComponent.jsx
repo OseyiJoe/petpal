@@ -68,7 +68,10 @@ useEffect(() => {
   let [dogBreedId, setDogBreedId] = useState();
   const [dogBreedInfo, setDogBreedInfo] = useState({});
   const [dogImage, setDogImage] = useState();
-   const [dogId, setDogId] = useState();
+  const [dogId, setDogId] = useState();
+  const [isOneHovered, setIsOneHovered] = useState(false);
+  const [isTwoHovered, setIsTwoHovered] = useState(false);
+  const [isThreeHovered, setIsThreeHovered] = useState(false);
 
      const countTotalFeedback = (good, neutral, bad) => {
        return good + neutral + bad;
@@ -484,6 +487,12 @@ useEffect(() => {
         setBrianWins,
         dogBreedInfo,
         dogImage,
+        isOneHovered,
+        isTwoHovered,
+        isThreeHovered,
+        setIsOneHovered,
+        setIsTwoHovered,
+        setIsThreeHovered
       }}
     >
       {children}

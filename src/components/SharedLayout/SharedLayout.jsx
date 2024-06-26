@@ -15,6 +15,7 @@ import { Suspense } from 'react';
 import { useEffect } from 'react';
 import { selectVotes } from '../../redux/selectors';
 import { useSelector } from 'react-redux';
+import siteLogo from './pet-care.png';
 
 export const SharedLayout = () => {
   const { toggleSign, makingTrue, makingFalse, setChger } = useUser();
@@ -83,14 +84,10 @@ export const SharedLayout = () => {
         <Symbol to="/">
           <Logo>
             <Frame role="img" aria-label="computer icon">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1623/1623681.png"
-                alt="Dog"
-                width="50px"
-              />
+              <img src={siteLogo} alt="Petpal" width="63px" />
             </Frame>
-            <IconLabel>Canine</IconLabel>
-            <IconLabel>Cove</IconLabel>
+            <IconLabel>Pet</IconLabel>
+            <IconLabel>pal</IconLabel>
           </Logo>
         </Symbol>
         <div className={css.advertContainer}>
@@ -156,12 +153,12 @@ export const SharedLayout = () => {
         <nav>
           <Link to="/">Home</Link>
           <Link className={css.signLink} to="/town_hall">
-            Town Hall
+            Cat Ward
             <Sign />
           </Link>
-          <Link to="/library">Library</Link>
-          <Link to="/gallery">Gallery</Link>
-          <Link to="/cinema">Cinema</Link>
+          <Link to="/library">Dog Ward</Link>
+          <Link to="/gallery">PetTube</Link>
+          <Link to="/cinema">PetScope</Link>
         </nav>
       </Header>
       <main className={css.home}>
