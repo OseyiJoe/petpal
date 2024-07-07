@@ -96,7 +96,7 @@ frame2.addEventListener('blur', () => {
                 setIsOneHovered(false);
               }}
             >
-              <Link to="/town_hall" className={css.movieInfo}>
+              <Link to="/cat_ward" className={css.movieInfo}>
                 <div className={css.catOverlay}>
                   <img
                     className={css.movieImage}
@@ -137,7 +137,7 @@ frame2.addEventListener('blur', () => {
                 setIsTwoHovered(false);
               }}
             >
-              <Link to="/Library" className={css.movieInfo}>
+              <Link to="/dog_ward" className={css.movieInfo}>
                 <div className={css.catOverlay}>
                   <img
                     className={css.movieImage}
@@ -178,7 +178,7 @@ frame2.addEventListener('blur', () => {
                 setIsThreeHovered(false);
               }}
             >
-              <Link to="/gallery" className={css.movieInfo}>
+              <Link to="/pet_tube" className={css.movieInfo}>
                 <div className={css.catOverlay}>
                   <img
                     className={css.movieImage}
