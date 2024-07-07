@@ -4,6 +4,7 @@ import { SharedLayout } from '../SharedLayout/SharedLayout';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchVotes } from '../../redux/operations';
+import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
 
 
 const Home = lazy(() => import('../Home/Home'));
@@ -16,11 +17,17 @@ const Gallery = lazy(() => import('../Gallery/Gallery'));
 const TownHall = lazy(() => import('../TownHall/TownHall'));
 
 export const App = () => {
+  const { initialApiCall } = useUser();
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchVotes());
   }, [dispatch]);
+
+  useEffect(() => {
+    initialApiCall();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Routes>

@@ -85,7 +85,7 @@ frame2.addEventListener('blur', () => {
             style={{
               transform: `
     ${isTwoHovered ? 'translateY(110%)' : 'translateY(0)'}
-    ${isThreeHovered ? 'translateX(-30%)' : 'translateX(0)'}
+    ${isThreeHovered ? 'translateX(-25%)' : 'translateX(0)'}
   `,
             }}
           >
@@ -104,11 +104,9 @@ frame2.addEventListener('blur', () => {
                     alt="Unavailable"
                   />
                   <p className={css.catWardDescription}>
-                    Presenting Mayor Goofy, the dynamic leader of Canine-Cove, a
-                    radiant metropolis brimming with canine camaraderie. With a
-                    heart as boundless as the sunny skies above, Mayor Goofy, a
-                    former Army General, has dedicated himself to uplifting the
-                    spirits of his fellow residents.
+                    Welcome to Petpal's Cat Ward! Answer a few questions, and we'll match
+                    you with the perfect cat breeds that fit your lifestyle and
+                    preferences
                   </p>
                 </div>
                 <span className={css.movieName}>
@@ -128,7 +126,7 @@ frame2.addEventListener('blur', () => {
             style={{
               transform: `
     ${isOneHovered ? 'translateY(110%)' : 'translateY(0)'}
-    ${isThreeHovered ? 'translateX(30%)' : 'translateX(0)'}
+    ${isThreeHovered ? 'translateX(25%)' : 'translateX(0)'}
   `,
             }}
           >
@@ -147,11 +145,8 @@ frame2.addEventListener('blur', () => {
                     alt="Unavailable"
                   />
                   <p className={css.catWardDescription}>
-                    Mr. Snoopy, with his boundless energy and infectious
-                    enthusiasm, has transformed the town's library into a
-                    vibrant hub of activity. Every corner bursts with color and
-                    creativity, from the whimsical reading nooks to the
-                    interactive storytelling corners.
+                    Welcome to Petpal's Dog Ward! Take our quick questionnaire to find
+                    the dog breeds that are just right for you and your family.
                   </p>
                 </div>
                 <span className={css.movieName}>
@@ -191,11 +186,7 @@ frame2.addEventListener('blur', () => {
                     alt="Unavailable"
                   />
                   <p className={css.catWardDescription}>
-                    Courage the Canine Clicker, the town’s beloved photographer,
-                    has an eye for capturing the most heartwarming moments. His
-                    cozy gallery, adorned with playful backdrops and twinkling
-                    lights, is always bustling with wagging tails and joyful
-                    barks.
+                    Welcome to PetTube! (Petpals Entertainment Ward) Search and enjoy a wide range of entertaining videos.
                   </p>
                 </div>
                 <span className={css.movieName}>

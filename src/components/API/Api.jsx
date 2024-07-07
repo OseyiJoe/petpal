@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export async function trendingMovies() {
   return fetch('https://api.themoviedb.org/3/trending/all/day?language=en-US', {
     method: 'GET',
@@ -8,7 +10,6 @@ export async function trendingMovies() {
     },
   });
 }
-
 
 export async function movieSearchFinder(movie) {
   return fetch(
@@ -78,13 +79,26 @@ export async function movieCastFinder(movieId) {
 }
 
 export function fetchBreeds() {
-  return fetch('https://api.thedogapi.com/v1/breeds', {
+  return fetch('https://api.thecatapi.com/v1/breeds', {
     method: 'GET',
     headers: {
       'x-api-key':
         'live_veNZdtcwPdxTq8JCOCN8dW0LvRfMhLJHM4uZOHDCWDC5ve8GaIeqqX5Y2CT6lrKI',
     },
   });
+}
+
+export function fetchCatByBreed(identifier) {
+  return fetch(
+    `https://api.thecatapi.com/v1/images/search?breed_ids=${identifier}`,
+    {
+      method: 'GET',
+      headers: {
+        'x-api-key':
+          'live_veNZdtcwPdxTq8JCOCN8dW0LvRfMhLJHM4uZOHDCWDC5ve8GaIeqqX5Y2CT6lrKI',
+      },
+    }
+  );
 }
 
 export function fetchDogByBreed(identifier) {
@@ -100,7 +114,6 @@ export function fetchDogByBreed(identifier) {
   );
 }
 
-
 export function fetchDogPics() {
   return fetch('https://api.thedogapi.com/v1/images/search?limit=10', {
     method: 'GET',
@@ -112,7 +125,8 @@ export function fetchDogPics() {
 }
 
 export function fetchMoreDogPics(pages) {
-  return fetch(`https://api.thedogapi.com/v1/images/search?limit=10&pages=${pages}`,
+  return fetch(
+    `https://api.thedogapi.com/v1/images/search?limit=10&pages=${pages}`,
     {
       method: 'GET',
       headers: {
@@ -122,3 +136,46 @@ export function fetchMoreDogPics(pages) {
     }
   );
 }
+
+
+export const startSrch = async srchTerm => {
+  try {
+    const response = await axios.get(`https://pixabay.com/api/videos/`, {
+      params: {
+        key: '41151959-2696743ecd3219a7fd97287eb',
+        q: srchTerm,
+        video_type: 'all',
+        safesearch: true,
+        per_page: 12,
+        page: 1,
+        min_width: 300,
+        min_height: 350,
+      },
+    });
+    const users = await response.data;
+    return users;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const loadSrch = async (srchTerm, pageNum) => {
+  try {
+    const response = await axios.get(`https://pixabay.com/api/videos/`, {
+      params: {
+        key: '41151959-2696743ecd3219a7fd97287eb',
+        q: srchTerm,
+        video_type: 'all',
+        safesearch: true,
+        per_page: 12,
+        page: pageNum,
+        min_width: 300,
+        min_height: 350,
+      },
+    });
+    const users = await response.data;
+    return users;
+  } catch (error) {
+    console.error(error);
+  }
+};

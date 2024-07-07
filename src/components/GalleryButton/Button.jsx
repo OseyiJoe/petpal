@@ -3,12 +3,11 @@ import css from './Button.module.css';
 
 
 export const Button = () => {
-  const { catPics, handleGalleryButtonPress } =
-    useUser();
+  const { petTubeVideos, handleGalleryButtonPress, fewResponse } = useUser();
 
   return (
     <div>
-      {catPics.length !== 0 ? (
+      {petTubeVideos.length !== 0 && !fewResponse ? (
         <button onClick={handleGalleryButtonPress} className={css.loadBtn}>
           Load More
         </button>

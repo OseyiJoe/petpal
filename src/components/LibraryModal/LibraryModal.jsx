@@ -1,15 +1,13 @@
 import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
 import css from './LibraryModal.module.css';
 import svg from '../SharedLayout/icons.svg';
-import { Loader } from '../Loader/Loader';
+
 
 export const LibraryModal = () => {
   const {
     handleInfoClose,
-    showCatInfo,
-    isLoading,
-    dogBreedInfo,
-    dogImage,
+    matchInfo,
+    matchRay,
   } = useUser();
 
   //console.log(dogBreedInfo);
@@ -17,7 +15,7 @@ export const LibraryModal = () => {
 
   return (
     <>
-      {showCatInfo !== undefined && (
+      {matchInfo !== undefined && (
         <div className={css.overlay}>
           <button className={css.closeModal} onClick={handleInfoClose}>
             <svg width="20px" height="20px" className={css.modalIcon}>
@@ -25,43 +23,101 @@ export const LibraryModal = () => {
             </svg>
           </button>
           <div className={css.galleryFrame}>
-            <Loader />
-            {isLoading === false && (
-              <div className={css.modal}>
-                <div>
-                  <img
-                    src={dogImage}
-                    alt="Dog Type"
-                    height="200px"
-                    className={css.catImage}
-                  />
-                  {/*dogBreedInfo.name*/}
-                </div>
-                <div className={css.dogDetails}>
-                  <div className={css.dogDetailsInfo}>
-                    <h3 className={css.dogInfoHeader}>{dogBreedInfo.name}</h3>
+            <div className={css.modal}>
+              {matchRay.length !== 0 ? (
+                <div className={css.matchListArea}>
+                  <h2 className={css.matchListContTitle}>
+                    Congrats, you have {matchRay.length} matches
+                  </h2>
+                  <div className={css.matchListCont}>
+                    <div className={css.matchList}>
+                      {matchRay.map(match => (
+                        <div className={css.matchListItem}>
+                          <div className={css.matchItemOverlay}>
+                            {match.image &&
+                              <img
+                              src={match.image.url}
+                              alt="Pet"
+                              width="450px"
+                              className={css.matchImage}
+                            />}
+                            <div className={css.matchDescription}>
+                              <div className={css.matchDescriptionItem}>
+                                Adaptability:{match.adaptability}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Affection Level:{match.affection_level}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Child Friendly:{match.child_friendly}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Dog Friendly:{match.dog_friendly}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Energy Level:{match.energy_level}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Experimental:{match.experimental}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Grooming:{match.grooming}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Hairless:{match.hairless}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Health Issues:{match.health_issues}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Hypoallergenic:{match.hypoallergenic}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Indoor:{match.indoor}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Intelligence:{match.intelligence}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Natural:{match.natural}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Rare:{match.rare}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Shedding Level:{match.shedding_level}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Short Legs:{match.short_legs}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Social Needs:{match.social_needs}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Stranger Friendly:{match.stranger_friendly}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Suppressed Tail:{match.suppressed_tail}
+                              </div>
+                              <div className={css.matchDescriptionItem}>
+                                Vocalisation:{match.vocalisation}
+                              </div>
+                            </div>
+                          </div>
+                          <p className={css.matchItemName}>{match.name}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  {dogBreedInfo.origin && (
-                    <div className={css.dogDetailsInfo}>
-                      <h3 className={css.dogInfo}>Origin</h3>
-                      <p className={css.dogInfo}>{dogBreedInfo.origin}</p>
-                    </div>
-                  )}
-                  {dogBreedInfo.life_span && (
-                    <div className={css.dogDetailsInfo}>
-                      <h3 className={css.dogInfo}>Life Span</h3>
-                      <p className={css.dogInfo}>{dogBreedInfo.life_span}</p>
-                    </div>
-                  )}
-                  {dogBreedInfo.temperament && (
-                    <div className={css.dogDetailsInfo}>
-                      <h3 className={css.dogInfo}>Temperament</h3>
-                      <p className={css.dogInfo}>{dogBreedInfo.temperament}</p>
-                    </div>
-                  )}
                 </div>
-              </div>
-            )}
+              ) : (
+                <div className={css.noMatchArea}>
+                  <h2 className={css.noMatchSign}>
+                    No matches, try increasing the threshold value.
+                  </h2>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}

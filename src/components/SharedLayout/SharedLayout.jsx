@@ -5,7 +5,6 @@ import {
   Header,
   Logo,
   Link,
-  Sign,
   Frame,
   IconLabel,
   Symbol
@@ -13,8 +12,8 @@ import {
 import css from './SharedLayout.module.css';
 import { Suspense } from 'react';
 import { useEffect } from 'react';
-import { selectVotes } from '../../redux/selectors';
-import { useSelector } from 'react-redux';
+//import { selectVotes } from '../../redux/selectors';
+//import { useSelector } from 'react-redux';
 import siteLogo from './pet-care.png';
 
 export const SharedLayout = () => {
@@ -66,15 +65,6 @@ export const SharedLayout = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chger]);
 
-   const countTotalFeedback = (good, neutral, bad) => {
-     return good + neutral + bad;
-   };
-
-
-  const votes = useSelector(selectVotes);
-
-  const total = countTotalFeedback( votes.Scooby, votes.Goofy, votes.Brian)
-  //console.log(votes.Scooby);
  
 
 
@@ -92,73 +82,22 @@ export const SharedLayout = () => {
         </Symbol>
         <div className={css.advertContainer}>
           {toggleSign ? (
-            total === 50 ? (
-              <div className={css.advert}>Election is Over</div>
-            ) : (
-              <div className={css.advert}>Cast your vote in the Town Hall</div>
-            )
+            <div className={css.advert}>
+              Introducing the Ultimate Pet Matching Experience with the Weighted
+              Euclidean Distance Algorithm
+            </div>
           ) : (
-            <>
-              {total < 50 &&
-                votes.Scooby > votes.Goofy &&
-                votes.Scooby > votes.Brian && (
-                  <div className={css.advert}>Scooby is in the lead</div>
-                )}
-              {total < 50 &&
-                votes.Goofy > votes.Scooby &&
-                votes.Goofy > votes.Brian && (
-                  <div className={css.advert}>Goofy is in the lead</div>
-                )}
-              {total < 50 &&
-                votes.Brian > votes.Scooby &&
-                votes.Brian > votes.Goofy && (
-                  <div className={css.advert}>Brian is in the lead</div>
-                )}
-              {votes.Scooby === votes.Goofy && votes.Scooby > votes.Brian && (
-                <div className={css.advert}>
-                  Scooby and Goofy are tied in the lead
-                </div>
-              )}
-              {votes.Scooby === votes.Brian && votes.Scooby > votes.Goofy && (
-                <div className={css.advert}>
-                  Scooby and Brian are tied in the lead
-                </div>
-              )}
-              {votes.Goofy === votes.Brian && votes.Goofy > votes.Scooby && (
-                <div className={css.advert}>
-                  Goofy and Brian are tied in the lead
-                </div>
-              )}
-              {votes.Scooby === votes.Goofy && votes.Scooby === votes.Brian && (
-                <div className={css.advert}>All candidates are tied</div>
-              )}
-              {total === 50 &&
-                votes.Scooby > votes.Goofy &&
-                votes.Scooby > votes.Brian && (
-                  <div className={css.advertWinner}>Scooby is the Winner</div>
-                )}
-              {total === 50 &&
-                votes.Goofy > votes.Scooby &&
-                votes.Goofy > votes.Brian && (
-                  <div className={css.advertWinner}>Goofy is in the Winner</div>
-                )}
-              {total === 50 &&
-                votes.Brian > votes.Scooby &&
-                votes.Brian > votes.Goofy && (
-                  <div className={css.advertWinner}>Brian is in the Winner</div>
-                )}
-            </>
+            <div className={css.advert}>
+              Welcome to the future of pet matchmaking, where science meets
+              cuteness.
+            </div>
           )}
         </div>
         <nav>
           <Link to="/">Home</Link>
-          <Link className={css.signLink} to="/town_hall">
-            Cat Ward
-            <Sign />
-          </Link>
+          <Link to="/town_hall">Cat Ward</Link>
           <Link to="/library">Dog Ward</Link>
           <Link to="/gallery">PetTube</Link>
-          <Link to="/cinema">PetScope</Link>
         </nav>
       </Header>
       <main className={css.home}>

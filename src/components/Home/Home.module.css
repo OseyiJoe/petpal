@@ -84,7 +84,7 @@ font-weight: 900;
   font-size: 36px;
  color: rgb(75, 177, 117);
   font-family: 'Comic Sans MS';
-      font-family: "DM Sans";
+      
       text-shadow: 2px 2px 2px #000000;
      
 }
@@ -96,6 +96,7 @@ font-weight: 900;
 font-weight: 900;
   color: rgb(75, 177, 117);
   font-family: "DM Sans";
+  font-family: 'Comic Sans MS';
    text-shadow: 1px 1px 1px #000000; 
 }
 
@@ -179,17 +180,22 @@ position: relative;
 }
 
 .catWardDescription {
-    border-radius: 10px;
+    border-radius: 50%;
     font-size: 18px;
     line-height: calc(28/18);
     letter-spacing: 0.03em;
-    color: rgb(114, 17, 17);
-    background-color: rgb(235, 144, 25, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:3px solid #f1dbba;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    color: green;
+    background-color: #C2E297;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    padding: 20px;
+    padding: 30px;
     transform: translateX(0%);
     opacity: 0;
     visibility: hidden;

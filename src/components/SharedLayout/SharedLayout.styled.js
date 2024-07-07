@@ -107,7 +107,7 @@ export const Link = styled(NavLink)`
   padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
-  color: rgb(75, 177, 117);
+  color: green;
   font-weight: 700;
   background-color: #c2e297;
   border: 2px solid #f1dbba;
