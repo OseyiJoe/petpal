@@ -95,9 +95,9 @@ export const SharedLayout = () => {
         </div>
         <nav>
           <Link to="/">Home</Link>
-          <Link to="/town_hall">Cat Ward</Link>
-          <Link to="/library">Dog Ward</Link>
-          <Link to="/gallery">PetTube</Link>
+          <Link to="/cat_ward">Cat Ward</Link>
+          <Link to="/dog_ward">Dog Ward</Link>
+          <Link to="/pet_tube">PetTube</Link>
         </nav>
       </Header>
       <main className={css.home}>

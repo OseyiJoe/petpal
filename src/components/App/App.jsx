@@ -39,9 +39,9 @@ export const App = () => {
         </Route>
         <Route path="*" element={<Home />} />
         <Route path="cinema" element={<Cinema />} />
-        <Route path="Library" element={<Library />} />
-        <Route path="gallery" element={<Gallery />} />
-        <Route path="town_hall" element={<TownHall />} />
+        <Route path="dog_ward" element={<Library />} />
+        <Route path="pet_tube" element={<Gallery />} />
+        <Route path="cat_ward" element={<TownHall />} />
       </Route>
     </Routes>
   );
