@@ -72,6 +72,13 @@ export const TownHall = () => {
                 of values that you select for the breed qualities, so adjust as
                 needed.
               </div>
+              <div className={css.dataItemCont}>
+                NOTE:- It is impossible to meet every single value requirement
+                that you have for the qualities that you'd like your pet to
+                have, this is because we are considering all your value
+                requirements as a whole, but rest assured that we are giving you
+                the best possible matches.
+              </div>
             </div>
             <div className={css.dataArea}>
               <form
