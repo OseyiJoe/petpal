@@ -6,9 +6,9 @@ import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
 
 
 const Home = lazy(() => import('../Home/Home'));
-const Library = lazy(() => import('../Library/Library'));
-const Gallery = lazy(() => import('../Gallery/Gallery'));
-const TownHall = lazy(() => import('../TownHall/TownHall'));
+const   DogWard = lazy(() => import('../dogWard/dogWard'));
+const Gallery = lazy(() => import('../petTube/petTube'));
+const CatWard = lazy(() => import('../catWard/catWard'));
 
 export const App = () => {
   const { initialApiCall } = useUser();
@@ -24,9 +24,9 @@ export const App = () => {
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
         <Route path="*" element={<Home />} />
-        <Route path="dog_ward" element={<Library />} />
+        <Route path="dog_ward" element={<DogWard />} />
         <Route path="pet_tube" element={<Gallery />} />
-        <Route path="cat_ward" element={<TownHall />} />
+        <Route path="cat_ward" element={<CatWard />} />
       </Route>
     </Routes>
   );

@@ -1,5 +1,5 @@
 import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
-import css from './TownHall.module.css';
+import css from './catWard.module.css';
 import catOwner from './cat owner.jpg';
 import { LibraryModal } from '../catWardModal/catWardModal';
 

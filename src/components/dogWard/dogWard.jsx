@@ -1,5 +1,5 @@
 //import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
-import css from './Library.module.css';
+import css from './dogWard.module.css';
 //import { VotingApp } from '../VotingApp/VotingApp';
 import dogOwner from './3756940.jpg';
 import { LibraryModal } from '../catWardModal/catWardModal';

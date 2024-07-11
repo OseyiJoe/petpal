@@ -1,10 +1,10 @@
 import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
-import css from './Gallery.module.css';
+import css from './petTube.module.css';
 import { Fancybox } from '@fancyapps/ui';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import { useEffect } from 'react';
-import { Button } from '../GalleryButton/Button';
-import { Loader } from '../GalleryLoader/Loader';
+import { Button } from '../petTubeButton/Button';
+import { Loader } from '../petTubeLoader/Loader';
 import petTubePic from './5664315.jpg';
 
 export const Gallery = () => {
