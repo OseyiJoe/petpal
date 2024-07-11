@@ -1,5 +1,5 @@
 import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
-import css from './LibraryModal.module.css';
+import css from './catWardModal.module.css';
 import svg from '../SharedLayout/icons.svg';
 
 

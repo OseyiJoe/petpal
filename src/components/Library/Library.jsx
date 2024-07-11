@@ -2,7 +2,7 @@
 import css from './Library.module.css';
 //import { VotingApp } from '../VotingApp/VotingApp';
 import dogOwner from './3756940.jpg';
-import { LibraryModal } from '../LibraryModal/LibraryModal';
+import { LibraryModal } from '../catWardModal/catWardModal';
 
 export const Library = () => {
   //const { handleCalculation, handleInfoClick } = useUser();

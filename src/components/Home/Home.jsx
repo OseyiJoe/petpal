@@ -1,10 +1,7 @@
 import css from './Home.module.css';
 import { Link } from 'react-router-dom';
 import { Loader } from '../InitLoader/Loader';
-//import { selectVotes } from '../../redux/selectors';
-//import { useSelector } from 'react-redux';
 import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
-//import { useEffect } from 'react';
 import homeAnimation from './heart.png';
 import catWardPic from './cat owner.jpg';
 import dogWardPic from './3756940.jpg';
@@ -13,13 +10,6 @@ import petTubePic from './5664315.jpg';
 export const Home = () => {
 
   let {
-    /*countTotalFeedback,
-    scoobyWins,
-    goofyWins,
-    brianWins,
-    setScoobyWins,
-    setGoofyyWins,
-    setBrianWins,*/
     isOneHovered,
     isTwoHovered,
     isThreeHovered,

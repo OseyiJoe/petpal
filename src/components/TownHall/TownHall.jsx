@@ -1,8 +1,7 @@
 import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
 import css from './TownHall.module.css';
-//import { VotingApp } from '../VotingApp/VotingApp';
 import catOwner from './cat owner.jpg';
-import { LibraryModal } from '../LibraryModal/LibraryModal';
+import { LibraryModal } from '../catWardModal/catWardModal';
 
 export const TownHall = () => {
   const { handleCalculation, handleInfoClick } = useUser();
@@ -357,7 +356,6 @@ export const TownHall = () => {
       </div>
     </>
   );
-    
 };
 
 export default TownHall;
