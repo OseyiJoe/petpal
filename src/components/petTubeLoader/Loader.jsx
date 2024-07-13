@@ -1,7 +1,6 @@
 import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
 import { ThreeCircles } from 'react-loader-spinner';
 import css from './Loader.module.css';
-import PropTypes from 'prop-types';
 
 export const Loader = () => {
   const { galleryLoaded } = useUser();
@@ -26,6 +25,4 @@ export const Loader = () => {
   );
 };
 
-Loader.propTypes = {
-  isLoading: PropTypes.bool.isRequired,
-};
+

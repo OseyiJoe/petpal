@@ -1,9 +1,9 @@
 import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
-import css from './catWardModal.module.css';
+import css from './dogWardModal.module.css';
 import svg from '../SharedLayout/icons.svg';
 
 
-export const CatWardModal = () => {
+export const DogWardModal = () => {
   const {
     handleInfoClose,
     matchInfo,
@@ -34,73 +34,51 @@ export const CatWardModal = () => {
                       {matchRay.map(match => (
                         <div className={css.matchListItem}>
                           <div className={css.matchItemOverlay}>
-                            {match.image &&
+                            {match.image_link && (
                               <img
-                              src={match.image.url}
-                              alt="Pet"
-                              width="450px"
-                              className={css.matchImage}
-                            />}
+                                src={match.image_link}
+                                alt="Pet"
+                                width="450px"
+                                className={css.matchImage}
+                              />
+                            )}
                             <div className={css.matchDescription}>
                               <div className={css.matchDescriptionItem}>
-                                Adaptability:{match.adaptability}
+                                Child Friendly:{match.good_with_children}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Affection Level:{match.affection_level}
+                                Friedliness with other dogs:
+                                {match.good_with_other_dogs}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Child Friendly:{match.child_friendly}
+                                Shedding Level:{match.shedding}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Dog Friendly:{match.dog_friendly}
+                                Grooming Difficulty:{match.grooming}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Energy Level:{match.energy_level}
+                                Drooling Level:{match.drooling}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Experimental:{match.experimental}
+                                Coat Length:{match.coat_length}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Grooming:{match.grooming}
+                                Stranger Friendly:{match.good_with_strangers}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Hairless:{match.hairless}
+                                Playfulness:{match.playfulness}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Health Issues:{match.health_issues}
+                                Protectiveness:{match.protectiveness}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Hypoallergenic:{match.hypoallergenic}
+                                Easiness to Train:{match.trainability}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Indoor:{match.indoor}
+                                Energy:{match.energy}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Intelligence:{match.intelligence}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Natural:{match.natural}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Rare:{match.rare}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Shedding Level:{match.shedding_level}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Short Legs:{match.short_legs}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Social Needs:{match.social_needs}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Stranger Friendly:{match.stranger_friendly}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Suppressed Tail:{match.suppressed_tail}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Vocalisation:{match.vocalisation}
+                                Barking Audibility:{match.barking}
                               </div>
                             </div>
                           </div>

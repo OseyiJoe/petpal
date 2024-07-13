@@ -1,13 +1,13 @@
 import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
 import css from './catWard.module.css';
 import catOwner from './cat owner.jpg';
-import { LibraryModal } from '../catWardModal/catWardModal';
+import { CatWardModal } from '../catWardModal/catWardModal';
 
-export const TownHall = () => {
-  const { handleCalculation, handleInfoClick } = useUser();
+export const CatWard = () => {
+  const { handleCatCalculation, handleInfoClick } = useUser();
   return (
     <>
-      <LibraryModal />
+      <CatWardModal />
       <div>
         <span className={css.titleContainer}>
           <span className={css.iconContainer}>
@@ -56,10 +56,9 @@ export const TownHall = () => {
               </div>
               <h3>How To Use</h3>
               <div>
-                On a scale of 1 - 5 or 0 - 1 select the value that suits you
+                On a scale of 1 - 5 select the value that suits you
                 best for a particular quality that you would like your ideal cat
-                to have. For the selectors that are 0 - 1, think of 0 as No and
-                1 as Yes.
+                to have.
               </div>
               <div className={css.dataItemCont}>
                 NOTE:- The Threshold selector determines the strictness of the
@@ -83,7 +82,7 @@ export const TownHall = () => {
               <form
                 id="userPrefForm"
                 className={css.form}
-                onSubmit={handleCalculation}
+                onSubmit={handleCatCalculation}
               >
                 <div>
                   <span className={css.dataItemDet}>
@@ -160,18 +159,6 @@ export const TownHall = () => {
                   </span>
 
                   <span className={css.dataItemCont}>
-                    <label htmlFor="experimental">Experimental:</label>
-                    <input
-                      type="number"
-                      id="experimental"
-                      name="experimental"
-                      defaultValue="0"
-                      min="0"
-                      max="1"
-                    />
-                  </span>
-
-                  <span className={css.dataItemCont}>
                     <label htmlFor="grooming">Grooming Needs:</label>
                     <input
                       type="number"
@@ -180,18 +167,6 @@ export const TownHall = () => {
                       defaultValue="3"
                       min="1"
                       max="5"
-                    />
-                  </span>
-
-                  <span className={css.dataItemCont}>
-                    <label htmlFor="hairless">Hairless:</label>
-                    <input
-                      type="number"
-                      id="hairless"
-                      name="hairless"
-                      defaultValue="1"
-                      min="0"
-                      max="1"
                     />
                   </span>
 
@@ -208,30 +183,6 @@ export const TownHall = () => {
                   </span>
 
                   <span className={css.dataItemCont}>
-                    <label htmlFor="hypoallergenic">Hypoallergenic:</label>
-                    <input
-                      type="number"
-                      id="hypoallergenic"
-                      name="hypoallergenic"
-                      defaultValue="1"
-                      min="0"
-                      max="1"
-                    />
-                  </span>
-
-                  <span className={css.dataItemCont}>
-                    <label htmlFor="indoor">Indoor:</label>
-                    <input
-                      type="number"
-                      id="indoor"
-                      name="indoor"
-                      defaultValue="0"
-                      min="0"
-                      max="1"
-                    />
-                  </span>
-
-                  <span className={css.dataItemCont}>
                     <label htmlFor="intelligence">Intelligence:</label>
                     <input
                       type="number"
@@ -244,30 +195,6 @@ export const TownHall = () => {
                   </span>
 
                   <span className={css.dataItemCont}>
-                    <label htmlFor="natural">Natural:</label>
-                    <input
-                      type="number"
-                      id="natural"
-                      name="natural"
-                      defaultValue="1"
-                      min="0"
-                      max="1"
-                    />
-                  </span>
-
-                  <span className={css.dataItemCont}>
-                    <label htmlFor="rare">Rare:</label>
-                    <input
-                      type="number"
-                      id="rare"
-                      name="rare"
-                      defaultValue="0"
-                      min="0"
-                      max="1"
-                    />
-                  </span>
-
-                  <span className={css.dataItemCont}>
                     <label htmlFor="shedding_level">Shedding Level:</label>
                     <input
                       type="number"
@@ -276,18 +203,6 @@ export const TownHall = () => {
                       defaultValue="3"
                       min="1"
                       max="5"
-                    />
-                  </span>
-
-                  <span className={css.dataItemCont}>
-                    <label htmlFor="short_legs">Short Legs:</label>
-                    <input
-                      type="number"
-                      id="short_legs"
-                      name="short_legs"
-                      defaultValue="1"
-                      min="0"
-                      max="1"
                     />
                   </span>
 
@@ -314,18 +229,6 @@ export const TownHall = () => {
                       defaultValue="4"
                       min="1"
                       max="5"
-                    />
-                  </span>
-
-                  <span className={css.dataItemCont}>
-                    <label htmlFor="suppressed_tail">Suppressed Tail:</label>
-                    <input
-                      type="number"
-                      id="suppressed_tail"
-                      name="suppressed_tail"
-                      defaultValue="0"
-                      min="0"
-                      max="1"
                     />
                   </span>
 
@@ -358,4 +261,4 @@ export const TownHall = () => {
   );
 };
 
-export default TownHall;
+export default CatWard;

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 
-export function fetchBreeds() {
+export function fetchCatBreeds() {
   return fetch('https://api.thecatapi.com/v1/breeds', {
     method: 'GET',
     headers: {
@@ -12,6 +12,17 @@ export function fetchBreeds() {
   });
 }
 
+export function fetchDogBreeds() {
+  return fetch('https://api.thedogapi.com/v1/breeds', {
+    method: 'GET',
+    headers: {
+      'x-api-key':
+        'live_veNZdtcwPdxTq8JCOCN8dW0LvRfMhLJHM4uZOHDCWDC5ve8GaIeqqX5Y2CT6lrKI',
+    },
+  });
+}
+
+/*
 export function fetchCatByBreed(identifier) {
   return fetch(
     `https://api.thecatapi.com/v1/images/search?breed_ids=${identifier}`,
@@ -37,8 +48,7 @@ export function fetchDogByBreed(identifier) {
     }
   );
 }
-
-
+*/
 
 
 
@@ -84,3 +94,32 @@ export const loadSrch = async (srchTerm, pageNum) => {
     console.error(error);
   }
 };
+
+/*
+export const fetchDogInfo = async (breedName) => {
+  try {
+    const response = await axios.get(
+      `https://api.api-ninjas.com/v1/dogs?name=${breedName}`,
+      {
+        headers: {
+          'X-Api-Key': 'xTb9fEpRLLWa7f8Fg6q3KA==fq2TAI2lzJd63qfi',
+        },
+      }
+    );
+    const users = response.data;
+    return users;
+  } catch (error) {
+    console.error(error);
+      return null;
+  }
+};
+*/
+
+/*export function fetchDogInfo() {
+  return fetch('https://api.api-ninjas.com/v1/dogs?name=golden retriever', {
+    method: 'GET',
+    headers: {
+      'X-Api-Key': 'kp+yNcMh+vJeRRelzRz9wg==Z3KjY2odrVQjyCeU',
+    },
+  });
+}*/

@@ -1,14 +1,32 @@
-//import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
+import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
 import css from './dogWard.module.css';
-//import { VotingApp } from '../VotingApp/VotingApp';
 import dogOwner from './3756940.jpg';
-import { LibraryModal } from '../catWardModal/catWardModal';
+import { DogWardModal } from '../dogWardModal/dogWardModal';
 
-export const Library = () => {
-  //const { handleCalculation, handleInfoClick } = useUser();
+export const DogWard = () => {
+  const { handleDogCalculation, dogQualities, handleInfoClick } = useUser();
+  const dogLabels = [
+    'Child Friendly',
+    'Friedliness with other dogs',
+    'Shedding Level',
+    'Grooming Difficulty',
+    'Drooling Level',
+    'Coat length',
+    'Stranger Friendly',
+    'Playfulness',
+    'Protectiveness',
+    'Easiness to Train',
+    'Energy',
+    'Barking Audibility or Vocalization',
+  ];
+  const getRandomValue = () => {
+    const defValue = Math.floor(Math.random() * 5) + 1;
+    return defValue;
+  }
+
   return (
     <>
-      <LibraryModal />
+      <DogWardModal />
       <div>
         <span className={css.titleContainer}>
           <span className={css.iconContainer}>
@@ -59,7 +77,43 @@ export const Library = () => {
             </div>
             <div className={css.dataArea}>
               <div className={css.dataAreaInfo}>
-                Development of the Dog Ward is in progress, collecting data.
+                <form onSubmit={handleDogCalculation} className={css.form}>
+                  <span className={css.dataItemDet}>
+                    <label htmlFor="threshold">THRESHOLD:</label>
+                    <input
+                      type="number"
+                      id="threshold"
+                      name="threshold"
+                      defaultValue="5"
+                      min="1"
+                      max="20"
+                    />
+                  </span>
+                  <div className={css.dataCollector}>
+                    {dogQualities.map((quality, qualityIndex) => (
+                      <div key={qualityIndex} className={css.dataItemCont}>
+                        <label htmlFor={`${qualityIndex}-${quality}`}>
+                          {dogLabels[qualityIndex]}:
+                        </label>
+                        <input
+                          type="number"
+                          id={`${qualityIndex}-${quality}`}
+                          name={quality}
+                          min="1"
+                          max="5"
+                          defaultValue={getRandomValue()}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <button
+                    type="submit"
+                    className={css.dataSender}
+                    onClick={handleInfoClick}
+                  >
+                    Submit
+                  </button>
+                </form>
               </div>
             </div>
           </div>
@@ -69,4 +123,4 @@ export const Library = () => {
   );
 };
 
-export default Library;
+export default DogWard;

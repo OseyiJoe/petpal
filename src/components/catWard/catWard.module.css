@@ -150,6 +150,14 @@ input{
   text-align: center;
 }
 
+select{
+  background-color: #C2E297;
+  color: green;
+  font-weight: 700;
+  font-family:'Comic Sans MS';
+  text-align: center;
+}
+
 .dataSenderCont{
   display: inline-block;
   padding: 20px;
