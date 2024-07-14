@@ -56,15 +56,14 @@ export const CatWard = () => {
               </div>
               <h3>How To Use</h3>
               <div>
-                On a scale of 1 - 5 select the value that suits you
-                best for a particular quality that you would like your ideal cat
-                to have.
+                On a scale of 1 - 5 select the value that suits you best for a
+                particular quality that you would like your ideal cat to have.
               </div>
               <div className={css.dataItemCont}>
                 NOTE:- The Threshold selector determines the strictness of the
-                algorithm. The higher the value is the less strict the algorithm
-                is and the more matches you'll get, but the lower the value is
-                the more strict the algorithm is and the less matches you'll
+                algorithm. The HIGHER the value is the LESS STRICT the algorithm
+                is and the MORE MATCHES you'll get, but the LOWER the value is
+                the MORE STRICT the algorithm is and the LESS MATCHES you'll
                 get. We recommend setting the value from 5 upwards to get
                 matches. But this number can change depending on the combination
                 of values that you select for the breed qualities, so adjust as

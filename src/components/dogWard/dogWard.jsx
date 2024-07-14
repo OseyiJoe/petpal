@@ -64,15 +64,27 @@ export const DogWard = () => {
                 scientifically driven, user-centric approach that guarantees the
                 best match for your lifestyle.
               </div>
+              <h3>How To Use</h3>
               <div>
-                Join us in revolutionizing the pet adoption experience. Discover
-                the unparalleled precision of the Weighted Euclidean Distance
-                algorithm and embark on your journey to find the pet that truly
-                complements your life.
+                On a scale of 1 - 5 select the value that suits you best for a
+                particular quality that you would like your ideal Dog to have.
               </div>
-              <div>
-                Your perfect pet match is just a click away. Embrace the future
-                of pet pairing with our cutting-edge algorithm today!
+              <div className={css.dataItemCont}>
+                NOTE:- The Threshold selector determines the strictness of the
+                algorithm. The HIGHER the value is the LESS STRICT the algorithm
+                is and the MORE MATCHES you'll get, but the LOWER the value is
+                the MORE STRICT the algorithm is and the LESS MATCHES you'll
+                get. We recommend setting the value from 5 upwards to get
+                matches. But this number can change depending on the combination
+                of values that you select for the breed qualities, so adjust as
+                needed.
+              </div>
+              <div className={css.dataItemCont}>
+                NOTE:- It is impossible to meet every single value requirement
+                that you have for the qualities that you'd like your pet to
+                have, this is because we are considering all your value
+                requirements as a whole, but rest assured that we are giving you
+                the best possible matches.
               </div>
             </div>
             <div className={css.dataArea}>
