@@ -81,6 +81,9 @@ export const UserProvider = ({ children }) => {
             const breedValue = breed[attribute];
             const userValue = anObj[attribute];
             const weight = weights[attribute];
+             if (userValue === 0) {
+          continue;
+        }
             console.log(
               `Attribute: ${attribute}, Breed Value: ${breedValue}, User Value: ${userValue}, Weight: ${weight}`
             );
@@ -176,6 +179,9 @@ export const UserProvider = ({ children }) => {
           const breedValue = breed[attribute];
           const userValue = anObj[attribute];
           const weight = weights[attribute];
+              if (userValue === 0) {
+          continue;
+        }
           console.log(
             `Attribute: ${attribute}, Breed Value: ${breedValue}, User Value: ${userValue}, Weight: ${weight}`
           );

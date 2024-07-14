@@ -59,6 +59,10 @@ export const CatWard = () => {
                 On a scale of 1 - 5 select the value that suits you best for a
                 particular quality that you would like your ideal cat to have.
               </div>
+              <div>
+                SELECT 0 FOR A PARTICULAR QUALITY IF YOU DON'T WANT IT TO BE
+                CONSIDERED BY THE ALGORITHM.
+              </div>
               <div className={css.dataItemCont}>
                 NOTE:- The Threshold selector determines the strictness of the
                 algorithm. The HIGHER the value is the LESS STRICT the algorithm
@@ -91,7 +95,7 @@ export const CatWard = () => {
                       id="threshold"
                       name="threshold"
                       defaultValue="5"
-                      min="5"
+                      min="1"
                       max="20"
                     />
                   </span>
@@ -103,8 +107,8 @@ export const CatWard = () => {
                       type="number"
                       id="adaptability"
                       name="adaptability"
-                      defaultValue="3"
-                      min="1"
+                      defaultValue="0"
+                      min="0"
                       max="5"
                     />
                   </span>
@@ -115,8 +119,8 @@ export const CatWard = () => {
                       type="number"
                       id="affection_level"
                       name="affection_level"
-                      defaultValue="4"
-                      min="1"
+                      defaultValue="0"
+                      min="0"
                       max="5"
                     />
                   </span>
@@ -127,8 +131,8 @@ export const CatWard = () => {
                       type="number"
                       id="child_friendly"
                       name="child_friendly"
-                      defaultValue="2"
-                      min="1"
+                      defaultValue="0"
+                      min="0"
                       max="5"
                     />
                   </span>
@@ -139,8 +143,8 @@ export const CatWard = () => {
                       type="number"
                       id="dog_friendly"
                       name="dog_friendly"
-                      defaultValue="5"
-                      min="1"
+                      defaultValue="0"
+                      min="0"
                       max="5"
                     />
                   </span>
@@ -151,8 +155,8 @@ export const CatWard = () => {
                       type="number"
                       id="energy_level"
                       name="energy_level"
-                      defaultValue="1"
-                      min="1"
+                      defaultValue="0"
+                      min="0"
                       max="5"
                     />
                   </span>
@@ -163,8 +167,8 @@ export const CatWard = () => {
                       type="number"
                       id="grooming"
                       name="grooming"
-                      defaultValue="3"
-                      min="1"
+                      defaultValue="0"
+                      min="0"
                       max="5"
                     />
                   </span>
@@ -175,8 +179,8 @@ export const CatWard = () => {
                       type="number"
                       id="health_issues"
                       name="health_issues"
-                      defaultValue="2"
-                      min="1"
+                      defaultValue="0"
+                      min="0"
                       max="5"
                     />
                   </span>
@@ -187,8 +191,8 @@ export const CatWard = () => {
                       type="number"
                       id="intelligence"
                       name="intelligence"
-                      defaultValue="4"
-                      min="1"
+                      defaultValue="0"
+                      min="0"
                       max="5"
                     />
                   </span>
@@ -199,8 +203,8 @@ export const CatWard = () => {
                       type="number"
                       id="shedding_level"
                       name="shedding_level"
-                      defaultValue="3"
-                      min="1"
+                      defaultValue="0"
+                      min="0"
                       max="5"
                     />
                   </span>
@@ -211,8 +215,8 @@ export const CatWard = () => {
                       type="number"
                       id="social_needs"
                       name="social_needs"
-                      defaultValue="2"
-                      min="1"
+                      defaultValue="0"
+                      min="0"
                       max="5"
                     />
                   </span>
@@ -225,8 +229,8 @@ export const CatWard = () => {
                       type="number"
                       id="stranger_friendly"
                       name="stranger_friendly"
-                      defaultValue="4"
-                      min="1"
+                      defaultValue="0"
+                      min="0"
                       max="5"
                     />
                   </span>
@@ -237,8 +241,8 @@ export const CatWard = () => {
                       type="number"
                       id="vocalisation"
                       name="vocalisation"
-                      defaultValue="3"
-                      min="1"
+                      defaultValue="0"
+                      min="0"
                       max="5"
                     />
                   </span>
