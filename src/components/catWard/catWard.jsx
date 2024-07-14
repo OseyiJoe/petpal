@@ -60,7 +60,7 @@ export const CatWard = () => {
                 particular quality that you would like your ideal cat to have.
               </div>
               <div>
-                SELECT 0 FOR A PARTICULAR QUALITY IF YOU DON'T WANT IT TO BE
+                SELECT 0 FOR A PARTICULAR QUALITY, IF YOU DON'T WANT IT TO BE
                 CONSIDERED BY THE ALGORITHM.
               </div>
               <div className={css.dataItemCont}>
@@ -68,10 +68,8 @@ export const CatWard = () => {
                 algorithm. The HIGHER the value is the LESS STRICT the algorithm
                 is and the MORE MATCHES you'll get, but the LOWER the value is
                 the MORE STRICT the algorithm is and the LESS MATCHES you'll
-                get. We recommend setting the value from 5 upwards to get
-                matches. But this number can change depending on the combination
-                of values that you select for the breed qualities, so adjust as
-                needed.
+                get. WE RECOMMEND INCREASING THE VALUE IF YOU DO NOT GET ANY
+                MATCHES AND REDUCING THE VALUE IF YOU GET TOO MANY MATCHES.
               </div>
               <div className={css.dataItemCont}>
                 NOTE:- It is impossible to meet every single value requirement
@@ -94,7 +92,7 @@ export const CatWard = () => {
                       type="number"
                       id="threshold"
                       name="threshold"
-                      defaultValue="5"
+                      defaultValue="3"
                       min="1"
                       max="20"
                     />
