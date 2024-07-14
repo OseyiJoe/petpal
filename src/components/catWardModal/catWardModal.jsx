@@ -58,46 +58,22 @@ export const CatWardModal = () => {
                                 Energy Level:{match.energy_level}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Experimental:{match.experimental}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Grooming:{match.grooming}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Hairless:{match.hairless}
+                                Grooming Needs:{match.grooming}
                               </div>
                               <div className={css.matchDescriptionItem}>
                                 Health Issues:{match.health_issues}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Hypoallergenic:{match.hypoallergenic}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Indoor:{match.indoor}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
                                 Intelligence:{match.intelligence}
                               </div>
                               <div className={css.matchDescriptionItem}>
-                                Natural:{match.natural}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Rare:{match.rare}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
                                 Shedding Level:{match.shedding_level}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Short Legs:{match.short_legs}
                               </div>
                               <div className={css.matchDescriptionItem}>
                                 Social Needs:{match.social_needs}
                               </div>
                               <div className={css.matchDescriptionItem}>
                                 Stranger Friendly:{match.stranger_friendly}
-                              </div>
-                              <div className={css.matchDescriptionItem}>
-                                Suppressed Tail:{match.suppressed_tail}
                               </div>
                               <div className={css.matchDescriptionItem}>
                                 Vocalisation:{match.vocalisation}
