@@ -7,15 +7,17 @@ import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
 
 const Home = lazy(() => import('../Home/Home'));
 const   DogWard = lazy(() => import('../dogWard/dogWard'));
-const Gallery = lazy(() => import('../petTube/petTube'));
+const PetTube = lazy(() => import('../petTube/petTube'));
 const CatWard = lazy(() => import('../catWard/catWard'));
+const PetScope = lazy(() => import('../PetScope/petScope'));
 
 export const App = () => {
-  const { initialApiCall } = useUser();
+  const { initialApiCall, initialImgApiCall } = useUser();
 
 
   useEffect(() => {
     initialApiCall();
+    initialImgApiCall();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -25,8 +27,9 @@ export const App = () => {
         <Route index element={<Home />} />
         <Route path="*" element={<Home />} />
         <Route path="dog_ward" element={<DogWard />} />
-        <Route path="pet_tube" element={<Gallery />} />
+        <Route path="pet_tube" element={<PetTube />} />
         <Route path="cat_ward" element={<CatWard />} />
+        <Route path="pet_scope" element={<PetScope />} />
       </Route>
     </Routes>
   );

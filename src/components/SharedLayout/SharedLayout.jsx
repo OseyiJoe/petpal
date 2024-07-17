@@ -88,8 +88,7 @@ export const SharedLayout = () => {
             </div>
           ) : (
             <div className={css.advert}>
-              Welcome to the future of pet matchmaking, where science meets
-              cuteness.
+              See if you can find the hidden Ward
             </div>
           )}
         </div>

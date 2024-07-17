@@ -13,21 +13,9 @@
     background-color: #94c751;
 }
 
-
-.iconContainerOne{
-    border: 5px solid #f1dbba;
-    padding: 10px;
-    border-radius: 4px;
-    background-color: #94c751;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position:relative;
-}
-
 .hiddenLink{
-  border: 1px solid rgba(15, 15, 15, 0.1);
+  background-color: #94c751;
+  border: 1px solid rgba(15, 15, 15, 0.3);
   width: 55px;
   height:55px;
    border-radius: 50%;
@@ -183,6 +171,7 @@ font-weight: 900;
   padding-left: 16px;
   font-family: 'Comic Sans MS';
   font-weight: 700;
+  color: green;
 }
 
 .button {
@@ -201,4 +190,8 @@ font-weight: 900;
   font-family: 'Comic Sans MS';
   font-weight: 700;
   color:#ffff;
+}
+
+.image{
+  width:100%;
 }

@@ -1,63 +1,62 @@
 import { useUser } from '../CustomProviderComponent/CustomProviderComponent';
-import css from './petTube.module.css';
-import { Fancybox } from '@fancyapps/ui';
-import '@fancyapps/ui/dist/fancybox/fancybox.css';
+import css from './petScope.module.css';
 import { useEffect } from 'react';
-import { Button } from '../petTubeButton/Button';
-import { Loader } from '../petTubeLoader/Loader';
-import petTubePic from './5664315.jpg';
-import {Link} from 'react-router-dom';
+import { Button } from '../PetScopeButton/Button';
+import { Loader } from '../Loader/Loader';
+import petScopePic from './5586932.jpg';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export const Gallery = () => {
-  const { petTubeVideos, handleSubmit, galleryLoaded } = useUser();
+  const { searchImgResults, handleImgSubmit, galleryLoaded } = useUser();
 
   useEffect(() => {
-    Fancybox.bind("[data-fancybox='gallery']", {
-      // Custom options
+    const lightbox = new SimpleLightbox('.gallery a', {
+      captionsData: 'alt',
+      captionDelay: 250,
+      closeText: 'X',
+      animationSlide: false,
     });
 
     // Cleanup function
     return () => {
-      Fancybox.destroy();
+      lightbox.destroy();
     };
-  }, [petTubeVideos]);
-
+  }, [searchImgResults]);
+  
 
   return (
     <main>
       <span className={css.titleContainer}>
         <span className={css.iconContainer}>
           <img
-            src={petTubePic}
+            src={petScopePic}
             className={css.icon}
             style={{ width: '100px' }}
             alt=""
           />
         </span>
         <span>
-          <span className={css.movieGalleryLabel}>PetTube</span>
+          <span className={css.movieGalleryLabel}>PetScope</span>
           <span className={css.movieGallerySlogan}>
-            <i>Take time out to Watch, Laugh and Love</i>
+            <i>Explore the World Through Pictures with PetScope!</i>
           </span>
         </span>
-        <span className={css.iconContainerOne}>
-          
-            <Link to="/pet_scope" className={css.hiddenLink}></Link>
-          
+        <span className={css.iconContainer}>
           <img
-            src={petTubePic}
+            src={petScopePic}
             className={css.iconTwo}
             style={{ width: '100px' }}
             alt=""
           />
         </span>
       </span>
-      <form className={css.form} onSubmit={handleSubmit}>
+      <form className={css.form} onSubmit={handleImgSubmit}>
         <input
           className={css.input}
           type="text"
           autoComplete="off"
-          placeholder="Search for Videos"
+          placeholder="Search for Pictures"
         />
         <button type="submit" className={css.button}>
           <span className={css.buttonLabel}>Search</span>
@@ -65,19 +64,17 @@ export const Gallery = () => {
       </form>
       <div className={css.galleryFrame}>
         <Loader />
-        {petTubeVideos.length !== 0 ? (
+        {searchImgResults.length !== 0 ? (
           <ul className={`${css.movieGallery} gallery`}>
-            {petTubeVideos.map(pic => (
-              <li key={pic.id} className={css.movieItem}>
-                <a href={pic.videos.large.url} data-fancybox="gallery">
-                  <video
-                    className={css.movieImage}
-                    src={pic.videos.medium.url}
-                    alt={pic.tags}
-                    controls
-                    height="240"
-                    width="410"
-                  ></video>
+            {searchImgResults.map(result => (
+              <li key={result.id} className={css.movieItem}>
+                <a href={result.largeImageURL}>
+                  <img
+                    className={css.image}
+                    src={result.webformatURL}
+                    alt={result.tags}
+                    name={result.largeImageURL}
+                  />
                 </a>
               </li>
             ))}

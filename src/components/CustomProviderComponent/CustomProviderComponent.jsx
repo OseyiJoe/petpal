@@ -4,6 +4,7 @@ import { fetchCatBreeds } from '../API/Api';
 //import { fetchDogBreeds } from '../API/Api';
 import { startSrch } from '../API/Api';
 import { loadSrch } from '../API/Api';
+import { startImgSrch, loadImgSrch } from '../API/Api';
 //import { fetchDogInfo } from '../API/Api';
 import Notiflix from 'notiflix';
 import { useMemo } from 'react';
@@ -39,6 +40,17 @@ export const UserProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState();
   const [matchRay, setMatchRay] = useState([]);
   const [matchInfo, setMatchInfo] = useState();
+
+  const [searchImgResults, getImgResults] = useState([]);
+  //const [isLoading, setLoadingStatus] = useState();
+  const [fewImgResponse, setImgResponseStatus] = useState();
+  const [imgSearchTerm, setImgSearchTerm] = useState();
+  const [imgPageItems, setImgPageItems] = useState();
+  const [imgPageNums, setImgPageNums] = useState();
+  const [didUserSearchImg, setImgSearchStatus] = useState();
+  const [imgResultsAmount, setImgResultsAmount] = useState();
+  //const [fullImage, setFullImage] = useState();
+  //const [imageAlt, setImageAlt] = useState();
 
   const dogQualities = [
     'good_with_children',
@@ -460,12 +472,137 @@ export const UserProvider = ({ children }) => {
     setMatchInfo(true);
   };
 
-  const handleInfoClose = () => {
-    //setCatInfo(undefined);
-    //set
-    setMatchInfo(undefined);
-  };
+   const handleInfoClose = () => {
+     //setCatInfo(undefined);
+     //set
+     setMatchInfo(undefined);
+   };
 
+
+    const memoizedImageResponse = useMemo(
+      () => startImgSrch(initalSearchTerm),
+      [initalSearchTerm]
+  );
+
+   const initialImgApiCall = () => {
+     setLoadingStatus(true);
+     memoizedImageResponse
+       .then(users => {
+         const response = users.hits;
+         getImgResults([...response]);
+         setImgSearchTerm(initalSearchTerm);
+         setImgPageNums(1);
+         setImgPageItems(12);
+         setImgSearchStatus(true);
+        
+         setTimeout(() => {
+           setLoadingStatus(false);
+         }, 2000);
+       })
+       .catch(error => {
+         Notiflix.Notify.failure(
+           'Oops! Something went wrong! Try reloading the page!'
+         );
+         setLoadingStatus(false);
+         console.error(`Error message ${error}`);
+       });
+   };
+  
+const handleImgSubmit = evt => {
+  evt.preventDefault();
+  const { value } = evt.target[0];
+
+  evt.target[1].style.boxShadow = 'inset 0 0 10px 5px rgba(0, 0, 0, 0.3)';
+  setTimeout(() => {
+    evt.target[1].style.boxShadow =
+      '0px 4px 6px -1px rgba(0, 0, 0, 0.3), 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 10px 12px -6px rgba(0, 0, 0, 0.4)';
+  }, 2000);
+  setLoadingStatus(true);
+  startImgSrch(value)
+    .then(users => {
+      const response = users.hits;
+      const totalResponse = users.totalHits;
+      console.log(users.totalHits);
+      if (totalResponse !== 0) {
+        Notiflix.Notify.success(`Hooray! We found ${users.totalHits} images.`);
+      }
+      if (totalResponse === 0) {
+        Notiflix.Notify.warning(
+          'Sorry, there are no images matching your search query. Please try again.'
+        );
+      }
+      if (totalResponse <= 12 && totalResponse !== 0) {
+        Notiflix.Notify.warning(
+          "We're sorry, but you've reached the end of search results."
+        );
+        setImgResponseStatus(true); //If page is not refreshed this stays true(even when false), hence the need for the else{}
+      } else {
+        setImgResponseStatus(false);
+      }
+
+      getImgResults([...response]);
+      setImgSearchTerm(value);
+      setImgPageNums(1);
+      setImgPageItems(12);
+      setImgSearchStatus(true);
+      setImgResultsAmount(totalResponse);
+
+      setTimeout(() => {
+        setLoadingStatus(false);
+      }, 2000);
+    })
+    .catch(error => {
+      Notiflix.Notify.failure(
+        'Oops! Something went wrong! Try reloading the page!'
+      );
+      setLoadingStatus(false);
+      console.error(`Error message ${error}`);
+    });
+  //console.log(response);
+  };
+  
+   const handleButtonPress = evt => {
+     evt.target.style.boxShadow = 'inset 0 0 10px 5px rgba(0, 0, 0, 0.3)';
+     setTimeout(() => {
+       evt.target.style.boxShadow =
+         '0px 4px 6px -1px rgba(0, 0, 0, 0.3), 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 10px 12px -6px rgba(0, 0, 0, 0.4)';
+     }, 2000);
+
+     let storageVar = imgPageNums;
+     storageVar += 1;
+     let storageVarItems = imgPageItems;
+     storageVarItems += 12;
+     if (storageVarItems >= imgResultsAmount) {
+       Notiflix.Notify.warning(
+         "We're sorry, but you've reached the end of search results."
+       );
+
+       setResponseStatus(true);
+     }
+     setLoadingStatus(true);
+
+     loadImgSrch(imgSearchTerm, storageVar)
+       .then(users => {
+         const response = users.hits;
+
+         getImgResults([...searchImgResults, ...response]);
+         setImgPageNums(storageVar);
+         setImgPageItems(storageVarItems);
+
+         setTimeout(() => {
+           setLoadingStatus(false);
+         }, 2000);
+       })
+       .catch(error => {
+         Notiflix.Notify.failure(
+           'Oops! Something went wrong! Try reloading the page!'
+         );
+         setLoadingStatus(false);
+         console.error(`Error message ${error}`);
+       });
+   };
+
+ 
   return (
     <UserContext.Provider
       value={{
@@ -503,6 +640,12 @@ export const UserProvider = ({ children }) => {
         catPageNums,
         dogQualities,
         handleDogCalculation,
+        initialImgApiCall,
+        searchImgResults,
+        handleImgSubmit,
+        handleButtonPress,
+        fewImgResponse,
+        didUserSearchImg,
       }}
     >
       {children}
