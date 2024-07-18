@@ -8,7 +8,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export const Gallery = () => {
-  const { searchImgResults, handleImgSubmit, galleryLoaded } = useUser();
+  const { searchImgResults, handleImgSubmit, isLoading } = useUser();
 
   useEffect(() => {
     const lightbox = new SimpleLightbox('.gallery a', {
@@ -80,7 +80,7 @@ export const Gallery = () => {
             ))}
           </ul>
         ) : (
-          galleryLoaded === false && (
+          isLoading === false && (
             <div className={css.message}>
               <p className={css.messageItem}>
                 No Videos, try another search term

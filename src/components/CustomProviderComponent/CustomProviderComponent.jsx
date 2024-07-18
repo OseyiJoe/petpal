@@ -508,7 +508,8 @@ export const UserProvider = ({ children }) => {
        });
    };
   
-const handleImgSubmit = evt => {
+  const handleImgSubmit = evt => {
+  getImgResults([]);
   evt.preventDefault();
   const { value } = evt.target[0];
 
