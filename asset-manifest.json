@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/petpal/static/css/main.0c1378f6.css",
-    "main.js": "/petpal/static/js/main.436165c9.js",
+    "main.js": "/petpal/static/js/main.5a38fce1.js",
     "static/css/577.9efa060e.chunk.css": "/petpal/static/css/577.9efa060e.chunk.css",
     "static/js/577.d219969f.chunk.js": "/petpal/static/js/577.d219969f.chunk.js",
     "static/css/184.98e04775.chunk.css": "/petpal/static/css/184.98e04775.chunk.css",
-    "static/js/184.7e5a6ff2.chunk.js": "/petpal/static/js/184.7e5a6ff2.chunk.js",
+    "static/js/184.53b3b800.chunk.js": "/petpal/static/js/184.53b3b800.chunk.js",
     "static/css/505.a06a4dad.chunk.css": "/petpal/static/css/505.a06a4dad.chunk.css",
     "static/js/505.67d16bb1.chunk.js": "/petpal/static/js/505.67d16bb1.chunk.js",
     "static/css/650.b83e07e8.chunk.css": "/petpal/static/css/650.b83e07e8.chunk.css",
@@ -23,11 +23,11 @@
     "static/media/icons.svg": "/petpal/static/media/icons.77c8d2ef0bd65aab65a1e4f05688514c.svg",
     "index.html": "/petpal/index.html",
     "main.0c1378f6.css.map": "/petpal/static/css/main.0c1378f6.css.map",
-    "main.436165c9.js.map": "/petpal/static/js/main.436165c9.js.map",
+    "main.5a38fce1.js.map": "/petpal/static/js/main.5a38fce1.js.map",
     "577.9efa060e.chunk.css.map": "/petpal/static/css/577.9efa060e.chunk.css.map",
     "577.d219969f.chunk.js.map": "/petpal/static/js/577.d219969f.chunk.js.map",
     "184.98e04775.chunk.css.map": "/petpal/static/css/184.98e04775.chunk.css.map",
-    "184.7e5a6ff2.chunk.js.map": "/petpal/static/js/184.7e5a6ff2.chunk.js.map",
+    "184.53b3b800.chunk.js.map": "/petpal/static/js/184.53b3b800.chunk.js.map",
     "505.a06a4dad.chunk.css.map": "/petpal/static/css/505.a06a4dad.chunk.css.map",
     "505.67d16bb1.chunk.js.map": "/petpal/static/js/505.67d16bb1.chunk.js.map",
     "650.b83e07e8.chunk.css.map": "/petpal/static/css/650.b83e07e8.chunk.css.map",
@@ -39,6 +39,6 @@
   },
   "entrypoints": [
     "static/css/main.0c1378f6.css",
-    "static/js/main.436165c9.js"
+    "static/js/main.5a38fce1.js"
   ]
 }
