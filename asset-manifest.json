@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/petpal/static/css/main.0c1378f6.css",
-    "main.js": "/petpal/static/js/main.5853eb8c.js",
+    "main.js": "/petpal/static/js/main.436165c9.js",
     "static/css/577.9efa060e.chunk.css": "/petpal/static/css/577.9efa060e.chunk.css",
     "static/js/577.d219969f.chunk.js": "/petpal/static/js/577.d219969f.chunk.js",
     "static/css/184.98e04775.chunk.css": "/petpal/static/css/184.98e04775.chunk.css",
@@ -9,7 +9,7 @@
     "static/css/505.a06a4dad.chunk.css": "/petpal/static/css/505.a06a4dad.chunk.css",
     "static/js/505.67d16bb1.chunk.js": "/petpal/static/js/505.67d16bb1.chunk.js",
     "static/css/650.b83e07e8.chunk.css": "/petpal/static/css/650.b83e07e8.chunk.css",
-    "static/js/650.83c57bca.chunk.js": "/petpal/static/js/650.83c57bca.chunk.js",
+    "static/js/650.3797fa2c.chunk.js": "/petpal/static/js/650.3797fa2c.chunk.js",
     "static/css/643.bc8cbecf.chunk.css": "/petpal/static/css/643.bc8cbecf.chunk.css",
     "static/js/643.00ee1d19.chunk.js": "/petpal/static/js/643.00ee1d19.chunk.js",
     "static/js/137.c33faeca.chunk.js": "/petpal/static/js/137.c33faeca.chunk.js",
@@ -23,7 +23,7 @@
     "static/media/icons.svg": "/petpal/static/media/icons.77c8d2ef0bd65aab65a1e4f05688514c.svg",
     "index.html": "/petpal/index.html",
     "main.0c1378f6.css.map": "/petpal/static/css/main.0c1378f6.css.map",
-    "main.5853eb8c.js.map": "/petpal/static/js/main.5853eb8c.js.map",
+    "main.436165c9.js.map": "/petpal/static/js/main.436165c9.js.map",
     "577.9efa060e.chunk.css.map": "/petpal/static/css/577.9efa060e.chunk.css.map",
     "577.d219969f.chunk.js.map": "/petpal/static/js/577.d219969f.chunk.js.map",
     "184.98e04775.chunk.css.map": "/petpal/static/css/184.98e04775.chunk.css.map",
@@ -31,7 +31,7 @@
     "505.a06a4dad.chunk.css.map": "/petpal/static/css/505.a06a4dad.chunk.css.map",
     "505.67d16bb1.chunk.js.map": "/petpal/static/js/505.67d16bb1.chunk.js.map",
     "650.b83e07e8.chunk.css.map": "/petpal/static/css/650.b83e07e8.chunk.css.map",
-    "650.83c57bca.chunk.js.map": "/petpal/static/js/650.83c57bca.chunk.js.map",
+    "650.3797fa2c.chunk.js.map": "/petpal/static/js/650.3797fa2c.chunk.js.map",
     "643.bc8cbecf.chunk.css.map": "/petpal/static/css/643.bc8cbecf.chunk.css.map",
     "643.00ee1d19.chunk.js.map": "/petpal/static/js/643.00ee1d19.chunk.js.map",
     "137.c33faeca.chunk.js.map": "/petpal/static/js/137.c33faeca.chunk.js.map",
@@ -39,6 +39,6 @@
   },
   "entrypoints": [
     "static/css/main.0c1378f6.css",
-    "static/js/main.5853eb8c.js"
+    "static/js/main.436165c9.js"
   ]
 }
