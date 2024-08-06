@@ -72,7 +72,7 @@ export const CatWard = () => {
                 MATCHES AND REDUCING THE VALUE IF YOU GET TOO MANY MATCHES.
               </div>
               <div className={css.dataItemCont}>
-                NOTE:- It is impossible to meet every single value requirement
+                NOTE:- It is not always possible to meet every single value requirement
                 that you have for the qualities that you'd like your pet to
                 have, this is because we are considering all your value
                 requirements as a whole, but rest assured that we are giving you
